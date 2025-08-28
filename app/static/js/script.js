@@ -1,7 +1,7 @@
 // Single DOMContentLoaded to handle theme + suggestions + view-more
 
 document.addEventListener("DOMContentLoaded", () => {
-    // ===== Theme Toggle =====
+    // ---- Theme Toggle ----
     const themeSwitch = document.getElementById("theme-switch");
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===== Search Suggestions (jQuery UI Autocomplete) =====
+    // ---- Search Suggestions (jQuery UI Autocomplete) ----
     const searchInput = document.getElementById("search-box");
     if (searchInput && window.jQuery && jQuery.ui && jQuery.fn.autocomplete) {
         $("#search-box").autocomplete({
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===== View more cards =====
+    // ---- View more cards ----
     const cards = document.querySelectorAll(".card");
     const viewMoreBtn = document.getElementById("view-more");
     let visibleCount = 5, maxCount = 20;

@@ -1,6 +1,4 @@
-/* ==============================
-   Global Styles & Reset
-============================== */
+/*  Global Styles & Reset */
 * {
     margin: 0;
     padding: 0;
@@ -15,11 +13,9 @@ body {
     line-height: 1.6;
 }
 
-/* ==============================
-   Theme Variables
-============================== */
+/*  Theme Variables  */
 :root {
-    /* Light theme - Indigo/Slate */
+    /* Light theme  */
     --bg-color: #ffffff;         /* page background */
     --text-color: #111827;       /* gray-900 text */
     --primary-color: #4f46e5;    /* indigo-600 */
@@ -34,7 +30,7 @@ body {
 
 /* Match JS: toggles class 'dark-theme' on body */
 body.dark-theme {
-    /* Dark theme - Deep slate/indigo */
+    /* Dark theme */
     --bg-color: #0b1220;         /* deep slate/navy */
     --text-color: #e5e7eb;       /* gray-200 */
     --primary-color: #818cf8;    /* indigo-400 */
@@ -47,9 +43,7 @@ body.dark-theme {
     --shadow-3: 0 16px 30px rgba(0, 0, 0, 0.40);
 }
 
-/* ==============================
-   Header
-============================== */
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -66,9 +60,7 @@ header {
     letter-spacing: 1px;
 }
 
-/* ==============================
-   Theme Toggle (Modern slider)
-============================== */
+/* Theme Toggle */
 .theme-toggle {
     position: relative;
 }
@@ -118,9 +110,8 @@ header {
     transform: translateX(30px);
 }
 
-/* ==============================
-   Search Form
-============================== */
+
+/* Search Form */
 .search-form {
     max-width: 600px;
     margin: 30px auto;
@@ -175,15 +166,15 @@ header {
     background: var(--primary-hover);
 }
 
-/* ==============================
-   Book Cards
-============================== */
+
+/* Book Cards */
 .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 cards per row on desktop */
     gap: 20px;
     padding: 20px 40px;
 }
+
 
 /* Responsive fallbacks */
 @media (max-width: 1200px) {
@@ -240,9 +231,8 @@ header {
     font-size: 1.1rem;
 }
 
-/* ==============================
-   View More Button
-============================== */
+
+/* View More Button */
 #view-more {
     background: var(--primary-color);
     color: white;
@@ -258,9 +248,7 @@ header {
     background: #005fa3;
 }
 
-/* ==============================
-   Utilities
-============================== */
+/* Utilities */
 .hidden {
     display: none !important;
 }
