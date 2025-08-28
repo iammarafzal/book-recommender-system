@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+</head>
+<body>
+    <header>
+        <h1 class="main_title">Book Recommender System</h1>
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch">
+            <label for="theme-switch" class="toggle-label">
+                <i class="fa-solid fa-sun sun-icon"></i>
+                <i class="fa-solid fa-moon moon-icon"></i>
+                <span class="circle"></span>
+            </label>
+        </div>
+    </header>
+
+    <form action="/search" method="get" class="search-form">
+        <div class="search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="search" id="search-box" name="q" placeholder="Search books, authors..." autocomplete="off" aria-label="Search books and authors">
+        </div>
+        <button type="submit" class="btn-primary">
+            <i class="fa-solid fa-search"></i>
+            <span>Search</span>
+        </button>
+    </form>
+
+    <div class="container" id="book-container">
+        {% if recommendations %}
+            {% for book in recommendations %}
+                <div class="card {% if loop.index > 5 %}hidden{% endif %}">
+                    <img src="{{ book['cover'] }}" alt="Book Cover">
+                    <h3>{{ book['title'] }}</h3>
+                    <p class="author">{{ book['author'] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-result">No recommendations yet.</p>
+        {% endif %}
+    </div>
+
+    {% if recommendations and recommendations|length > 5 %}
+        <div style="text-align:center; margin:20px;">
+            <button id="view-more">View More</button>
+        </div>
+    {% endif %}
+
+    <!-- Scripts: jQuery, jQuery UI (for autocomplete), then app script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+</html>
