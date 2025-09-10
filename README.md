@@ -24,24 +24,6 @@ This system helps users discover books similar to their favorite titles or autho
 
 ---
 
-## 📂 Project Structure
-│
-├── app/ 
-│ ├── models/ 
-│ │ ├── model.pkl # Precomputed similarity + book dataset
-
-│ │ └── recommender.py # Recommendation logic
-│ ├── static/ # CSS, JS, Images
-│ ├── templates/ # HTML templates
-│ └── app.py # Flask backend
-│
-├── data/ # Dataset (10k books metadata)
-├── requirements.txt # Dependencies
-└── README.md # Project Documentation
-
-
----
-
 ## ⚡ How It Works
 1. The **tags column** of books is vectorized using `CountVectorizer` (max 2000 features, stopwords removed).  
 2. Pairwise **Cosine Similarity** is computed between all books.  
