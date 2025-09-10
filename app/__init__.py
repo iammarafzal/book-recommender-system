@@ -17,7 +17,6 @@ def search():
 
     return render_template('index.html', recommendations=recommendations)
 
-# New route for autocomplete suggestions
 @app.route('/suggest', methods=["GET"])
 def suggest():
     term = request.args.get("term", "").lower()
