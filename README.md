@@ -26,10 +26,8 @@ This system helps users discover books similar to their favorite titles or autho
 
 ## 📂 Project Structure
 │
-├── app/
-
-│ ├── models/
-
+├── app/ 
+│ ├── models/ 
 │ │ ├── model.pkl # Precomputed similarity + book dataset
 
 │ │ └── recommender.py # Recommendation logic
