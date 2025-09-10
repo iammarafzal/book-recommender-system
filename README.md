@@ -36,6 +36,6 @@ This system helps users discover books similar to their favorite titles or autho
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/iammarafzal/Book-Recommendation-System.git](https://github.com/iammarafzal/book-recommender-system.git)
+git clone https://github.com/iammarafzal/book-recommender-system.git
 cd Book-Recommendation-System
 
